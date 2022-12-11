@@ -1,0 +1,33 @@
+{{#if _id}},
+{{else}}
+  <h2>usersData</h2>
+  <div class="post">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Address</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      {{#each posts}}
+
+        {{#if _id}}
+
+          <tbody>
+            <tr>
+              <td>"{{username}}"</td>
+              <td>street: "{{address/street}}", suite: "{{address/suite}}",
+                city: "{{address/city}}", zipcode: "{{address/zipcode}}" , geo:
+                "{{address/geo/lat}}" "{{address/geo/lng}}"
+              </td>
+              <td><a href="">{{website}}</a></td>
+            </tr>
+
+          </tbody>
+
+        {{/if}}
+      {{/each}}
+    </table>
+  </div>
+{{/if}}
